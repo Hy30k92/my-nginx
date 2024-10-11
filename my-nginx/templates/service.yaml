@@ -4,10 +4,10 @@ metadata:
   name: {{ .Values.service.name }}
 spec:
   selector:
-    app: {{ .Values.service.name }}
+    app: {{ .Values.service.app }}
   ports:
     - protocol: TCP
-      port: 80
+      port: {{ .Values.service.port }}
       targetPort: 8080
-  type: NodePort
+  type: {{ .Values.service.type }}
   
